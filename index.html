@@ -20,7 +20,9 @@ html, body
     top: 12px;
 }
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
+$(document).ready(function() {
 var strokeWidth = 2;
 var bufferSize;
 
@@ -112,6 +114,8 @@ var updateSvgPath = function () {
         path.setAttribute("d", strPath + tmpPath);
     }
 };
+alert("window loaded");
+});
 </script>
 </head>
 <body>
