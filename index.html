@@ -128,9 +128,16 @@ var updateSvgPath = function () {
 };
 alert("window loaded");
 });
-
-///// video code ////
-
+</script>
+</head>
+<body>
+<div id="container">
+	<video autoplay="true" id="videoElement">
+	
+	</video>
+</div>
+<script>
+//camera code here
 var video = document.querySelector("#videoElement");
 
 if (navigator.mediaDevices.getUserMedia) {
@@ -142,16 +149,7 @@ if (navigator.mediaDevices.getUserMedia) {
       console.log("Something went wrong!");
     });
 }
-
-/// video ends here ///
 </script>
-</head>
-<body>
-<div id="container">
-	<video autoplay="true" id="videoElement">
-	
-	</video>
-</div>
 <div id="divSmoothingFactor">
     <label for="cmbBufferSize">Buffer size:</label>
     <select id="cmbBufferSize">
