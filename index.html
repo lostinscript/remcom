@@ -5,6 +5,7 @@ html, body
 {
     padding: 0px;
     margin: 0px;
+	background-color: deepskyblue;
 }
 #svgElement
 {
@@ -18,6 +19,17 @@ html, body
     position: absolute;
     left: 14px;
     top: 12px;
+}
+#container {
+	margin: 0px auto;
+	width: 500px;
+	height: 375px;
+	border: 10px #333 solid;
+}
+#videoElement {
+	width: 500px;
+	height: 375px;
+	background-color: #666;
 }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -116,9 +128,30 @@ var updateSvgPath = function () {
 };
 alert("window loaded");
 });
+
+///// video code ////
+
+var video = document.querySelector("#videoElement");
+
+if (navigator.mediaDevices.getUserMedia) {
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function (stream) {
+      video.srcObject = stream;
+    })
+    .catch(function (err0r) {
+      console.log("Something went wrong!");
+    });
+}
+
+/// video ends here ///
 </script>
 </head>
 <body>
+<div id="container">
+	<video autoplay="true" id="videoElement">
+	
+	</video>
+</div>
 <div id="divSmoothingFactor">
     <label for="cmbBufferSize">Buffer size:</label>
     <select id="cmbBufferSize">
