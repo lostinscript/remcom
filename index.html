@@ -20,6 +20,7 @@ html, body
     position: absolute;
     left: 14px;
     top: 12px;
+    display: none;
 }
 #container {
 	/*margin: 0px auto;*/
@@ -155,8 +156,8 @@ if (navigator.mediaDevices.getUserMedia) {
     <label for="cmbBufferSize">Buffer size:</label>
     <select id="cmbBufferSize">
         <option value="1">1 - No smoothing</option>
-        <option value="4">4 - Sharp curves</option>
-        <option value="8" selected="selected">8 - Smooth curves</option>
+        <option value="4" selected="selected">4 - Sharp curves</option>
+        <option value="8">8 - Smooth curves</option>
         <option value="12">12 - Very smooth curves</option>
         <option value="16">16 - Super smooth curves</option>
         <option value="20">20 - Hyper smooth curves</option>
